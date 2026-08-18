@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="CarePath - explainable specialist referrals powered by graph intelligence" />
+  <title>CarePath · Referral intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#" aria-label="CarePath home"><span class="brand-mark">C</span><span>CarePath</span></a>
+    <nav aria-label="Main navigation">
+      <a class="nav-item active" href="#discover"><span>⌁</span>Discover</a>
+      <a class="nav-item" href="#network"><span>◌</span>My network</a>
+      <a class="nav-item" href="#saved"><span>♡</span>Saved referrals</a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="secure"><span>✓</span><div><b>Secure workspace</b><small>Demo patient data only</small></div></div>
+      <button class="profile"><span class="avatar avatar-small">AR</span><span><b>Dr. Ananya Rao</b><small>Care coordinator</small></span><span>•••</span></button>
+    </div>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <button class="menu" aria-label="Open navigation">☰</button>
+      <div class="crumb">Referral workspace <span>/</span> Discover</div>
+      <div class="status"><span class="status-dot"></span>Network live</div>
+    </header>
+
+    <section class="hero" id="discover">
+      <div>
+        <div class="eyebrow">REFERRAL INTELLIGENCE</div>
+        <h1>Find the right specialist.<br><em>Know why they fit.</em></h1>
+        <p>Explore trusted referral paths across clinicians, specialties, facilities, and insurance networks—without losing the human connection.</p>
+      </div>
+      <div class="mini-network" aria-hidden="true">
+        <span class="line l1"></span><span class="line l2"></span><span class="line l3"></span>
+        <span class="node n1">AR</span><span class="node n2">RM</span><span class="node n3">MN</span><span class="node n4">SI</span>
+      </div>
+    </section>
+
+    <section class="search-card" aria-labelledby="search-title">
+      <div class="search-head"><div><span class="step">01</span><h2 id="search-title">Build a referral path</h2></div><span class="hint">2+ hop graph traversal</span></div>
+      <form id="referral-form">
+        <label>Starting clinician<select id="source" name="source" required><option value="">Loading clinicians…</option></select></label>
+        <label>Specialty needed<select id="specialty" name="specialty" required><option value="">Loading specialties…</option></select></label>
+        <label>Insurance<select id="insurance" name="insurance"><option value="">Any insurance</option><option value="star">Star Health</option><option value="hdfc">HDFC ERGO</option><option value="care">Care Health</option></select></label>
+        <button class="primary" type="submit"><span>Find trusted matches</span><span>→</span></button>
+      </form>
+    </section>
+
+    <section class="results-section" aria-live="polite">
+      <div class="results-head"><div><span class="step">02</span><div><h2>Recommended specialists</h2><p id="result-copy">Ranked by relationship strength, fit, and availability</p></div></div><button class="filter-button">Tune ranking <span>⌄</span></button></div>
+      <div id="state" class="state"><div class="state-graphic">⌁</div><h3>Your trusted network is ready</h3><p>Choose a clinician and specialty to reveal explainable referral paths.</p></div>
+      <div id="results" class="results" hidden></div>
+    </section>
+
+    <footer><span>CarePath demo · Powered by CognoDB</span><span>Graph data refreshes with each search</span></footer>
+  </main>
+
+  <dialog id="details"><button class="close" aria-label="Close details">×</button><div id="dialog-content"></div></dialog>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

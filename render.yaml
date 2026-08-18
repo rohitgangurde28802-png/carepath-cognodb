@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: carepath-cognodb
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: COGNODB_URI
+        sync: false
+      - key: COGNODB_USERNAME
+        value: cognodb
+      - key: COGNODB_PASSWORD
+        sync: false
